@@ -1,36 +1,66 @@
+# Steel Scrap Price Prediction and Analysis Platform
 
-# STEEL CUT
-- 한 줄 소개
-  - **(주) 엠티데이타 _  AI를 활용한 국내 철 스크랩 단가 예측 시스템**
+## Project Overview
+This project focuses on predicting and analyzing the price trends of **steel scrap**, a critical resource in the steel industry.  
+The goal is to assist stakeholders in securing steel scrap at lower costs, achieving carbon neutrality, and enhancing the sustainability of the steel industry.
 
-  
-- 프로젝트 기간
-  - 2023/10/30 → 2023/12/15
-- 개발 환경 및 도구
-  - HTML/CSS, Node.js, Numpy, PYTHON, Pandas, React, Window, darts, matplotlib, prophet, skicit-learn
-- 팀 구성
-  - 이수진 김대환 박소원 이재필 정세윤
+- **Key Objectives**:  
+  - Short-, mid-, and long-term price predictions (7-day, 14-day, 28-day)
+  - Price trend analysis based on economic indicators and key variables
+  - Development of an intuitive web-based UI/UX platform  
 
 ---
-## 💖 세부 내용
-### AI를 활용한 국내 철 스크랩 단가 예측 서비스
 
-**💡 프로젝트 개요**
+## Key Features
+### 1. **Steel Scrap Price Prediction Model**
+- **Applied Models**:
+  - DLinear (Final Model)
+  - Prophet
+  - XGBoost, Random Forest, LSTM (For Benchmarking)
+- **Prediction Performance**:
+  - 7-day prediction: RMSE 3.81, Accuracy 84%
+  - 14-day prediction: RMSE 7.99, Accuracy 73%
+  - 28-day prediction: RMSE 20.13, Accuracy 62%
 
-   - 파리 협정 및 탄소 중립 정책으로 인한 철 스크랩 수요 상승
-   - AI 모델을 활용한 철 스크랩 가격 예측 및 이를 활용한 웹 플랫폼을 개발
-   - 철강 산업의 탄소 배출 감축과 경쟁력 강화에 기여
+### 2. **Web Platform**
+- **Pages**:
+  - Home: Dashboard displaying average and predicted prices
+  - Data Table: Steel scrap prices and associated economic indicators
+  - Detailed Charts: Price trends, feature importance, and carbon emission maps
+  - Support Center: FAQs, basic information, and developer details
 
-**💡 주요 기능**
-
-   - Dlinear 모델을 이용한 철 스크랩 가격 예측 ( 7일 / 14일 / 28일 )
-   - 웹 페이지 구축
+### 3. **Automated Data Pipeline**
+- **Data Collection**:
+  - Web scraping using Selenium and BeautifulSoup
+  - Resampling data to weekly and daily intervals
+- **Automation**:
+  - Weekly updates at 7 PM on Sundays with model retraining (Cron scheduled)
 
 ---
-## 👩🏻‍💼 담당 파트
 
-- 철 스크랩 관련 도메인 분석
-- 철 스크랩과 관련된 독립 변수 크롤링
-- 철 스크랩 가격 예측을 위한 모델링
-- 시계열 예측을 위한 모델 탐색
-- DLinear 모델링 및 모델 성능 평가
+## Data and Technology Stack
+### Data
+- **Dependent Variables**: Average steel scrap prices (Iron Scrap, Heavy A, Light A, Turnings A, Turnings C)
+- **Independent Variables**: Key economic indicators such as crude oil prices, gold prices, exchange rates, and iron ore imports
+- **Data Period**: August 2006 ~ December 2023
+
+### Technology Stack
+- **Languages**: Python, JavaScript
+- **Modeling Libraries**:
+  - Pandas, Numpy, Scikit-Learn, Darts, Autogluon, Prophet, XGBoost
+- **Web Frameworks**:
+  - React, Node.js
+- **Database**: PostgreSQL
+
+---
+
+## Benefits and Future Improvements
+### Benefits
+- Supports cost-effective steel scrap procurement to enhance corporate competitiveness
+- Contributes to carbon neutrality and ensures sustainability in the steel industry
+- Provides real-time insights into steel scrap prices and associated economic indicators
+
+### Future Improvements
+- **Automation**: Implement Cron-based scheduling for data updates and model retraining
+- **Server Stability**: Transition from local to server-based infrastructure
+- **Model Performance**: Improve prediction accuracy for 14-day and 28-day forecasts
